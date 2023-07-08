@@ -24,7 +24,7 @@ class Conta(models.Model):
     banco = models.CharField(max_length=2, choices=banco_choices)
     tipo = models.CharField(max_length=2, choices=tipo_choices)
     valor = models.FloatField()
-    icone = models.ImageField(upload_to='icones')
+    icone = models.ImageField(upload_to='icone')
 
     def __str__(self):
         return self.apelido

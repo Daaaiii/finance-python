@@ -25,15 +25,15 @@
                 <hr>
 
                 <div class="contas">
-{% for conta in contas%}
+                    {% for conta in contas %}
                     
                         <div class="lista-contas-main">
-                            <span><img width="10%" src="#">&nbsp&nbsp{{conta.apelido}}</span>
+                            <span><img width="10%" src="{{conta.icone.url}}">&nbsp&nbsp{{conta.apelido}}</span>
 
                             <span class="total-conta positivo ">R$ {{conta.valor}},00&nbsp&nbsp&nbsp <a href="/perfil/deletar_banco/{{conta.id}}"><img src="{% static 'perfil/img/exit.png' %}"></a></span>
                         </div>
                         <br>
-  {% endfor %}                  
+                    {% endfor %}                  
                     
                 </div>
 
@@ -47,7 +47,7 @@
             <div class="col-md-5">
                 <p class="fonte-destaque">Nova conta</p>
                 
-                <form action="{% url 'cadastrar_banco' %}" method="POST"> {% csrf_token %}
+                <form action="{% url 'cadastrar_banco' %}" method="POST" enctype="multipart/form-data" > {% csrf_token %}
                     <label>Apelido</label>
                     <input type="text" name="apelido" class="form-control" placeholder="">
                     <br>

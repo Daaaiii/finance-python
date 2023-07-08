@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Conta,Categoria
+from .models import Conta, Categoria
 from django.contrib import messages
 from django.contrib.messages import constants
 from .utils import calcula_total
